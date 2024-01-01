@@ -21,15 +21,20 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('product.product_add');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resource in storage. 
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product();
+        $product->name = $request->pname;
+        $product->price = $request->price;
+        $product->quantity = $request->qty;
+        $product->save();
+        return back();
     }
 
     /**

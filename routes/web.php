@@ -21,4 +21,6 @@ use App\Http\Controllers\ProductController;
 
 Route::controller(ProductController::class)->group(function(){
     Route::get('/', 'index')->name('product.all');
+    Route::get('/product/create', 'create')->name('product.create');
+    Route::post('/product/add', 'store')->name('product.add');
 });
